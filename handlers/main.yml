@@ -1,0 +1,16 @@
+---
+# handlers file for systemd-journal-remote
+
+- name: Reload systemd
+  ansible.builtin.systemd:
+    daemon_reload: true
+
+- name: Restart systemd-journal-remote.service
+  ansible.builtin.systemd:
+    name: systemd-journal-remote.service
+    state: restarted
+
+- name: Restart systemd-journal-remote.socket
+  ansible.builtin.systemd:
+    name: systemd-journal-remote.socket
+    state: restarted

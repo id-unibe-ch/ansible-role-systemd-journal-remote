@@ -1,0 +1,5 @@
+---
+# defaults file for systemd-journal-remote
+
+systemd_journal_remote_seal: true
+systemd_journal_remote_split_mode: "host"

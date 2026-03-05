@@ -1,0 +1,12 @@
+---
+- name: Converge
+  hosts: all
+  gather_facts: true
+  vars:
+    systemd_journal_remote_server_key_file: '/etc/pki/tls/private/remote.key'
+    systemd_journal_remote_server_certificate_file: '/etc/pki/tls/certs/remote.crt'
+    systemd_journal_remote_trusted_certificate_file: '/etc/pki/tls/certs/ca.crt'
+  tasks:
+    - name: "Include ansible-role-systemd-journal-remote"
+      ansible.builtin.include_role:
+        name: "unibeid.systemd_journal_remote"
